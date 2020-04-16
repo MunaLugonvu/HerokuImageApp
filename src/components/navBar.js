@@ -19,6 +19,9 @@ export default class Navbar extends React.Component {
         <li className="nav-item">
           <Link className="nav-link" to="upload">Upload</Link>
         </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="myphotos">My Photos</Link>
+        </li>
       </ul>
       <span className="navbar-text" onClick={()=>{
         localStorage.removeItem("user_id");

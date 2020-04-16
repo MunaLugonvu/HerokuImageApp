@@ -3,6 +3,7 @@ import {BrowserRouter,Route,Switch} from "react-router-dom";
 import Navbar from './components/navBar';
 import Upload from './components/upload';
 import Home from './components/Home';
+import Photos from './components/Photos';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
     <Switch>
     <Route exact path="/" component={Home}></Route>
     <Route exact path="/upload" component={Upload}/>
+   <Route exact path="/myphotos" component={Photos}/>
     </Switch>
     </div>
     </BrowserRouter>
