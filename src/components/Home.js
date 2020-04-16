@@ -12,14 +12,13 @@ export default class Home extends Component {
 
 
 
-  // Listen to the Firebase Auth state and set the local state.
   componentDidMount() {
     this.unregisterAuthObserver = firebase.auth().onAuthStateChanged(
         (user) => this.setState({isLoggedIn: !!user})
     );
   }
 
-  // Make sure we un-register Firebase observers when the component unmounts.
+  
   componentWillUnmount() {
     this.unregisterAuthObserver();
   }

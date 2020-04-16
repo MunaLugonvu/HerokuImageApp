@@ -8,7 +8,6 @@ export default class Photos extends Component {
     let images=[]
     firebase.firestore().collection(localStorage.getItem("user_id")).get().then(function(querySnapshot) {
       querySnapshot.forEach(function(doc) {
-          // doc.data() is never undefined for query doc snapshots
 
           let imageData={
             url:doc.data().url,
