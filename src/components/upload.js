@@ -61,8 +61,8 @@ export default class Upload extends Component {
       <div {...getRootProps()}>
         <input {...getInputProps()} onDrop={files => this.handleUpload(files)} onChange={(e)=>this.handleUpload(e.target.files)}/>
         <div className="custom-file">
-  <input  className="custom-file-input" id="customFile"/>
-  <label className="custom-file-label" htmlFor="customFile">Drag and drop or choose a files</label>
+  <input  className="custom-file-input" id="inputGroupFile02"/>
+  <label className="custom-file-label" htmlFor="inputGroupFile02">Drag and drop or choose a files</label>
 </div>
       </div>
     </section>
