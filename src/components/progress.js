@@ -5,7 +5,7 @@ import React from "react";
   <div className="progress mt-0 mb-3">
 
      <div
-      className="progress-bar progress-bar-striped progress-bar-animated"
+      className="progress-bar progress-bar-striped"
       role="progressbar"
       style={{ width: `${percentage}%` }}
     >
