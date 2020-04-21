@@ -28,7 +28,7 @@ export default class Navbar extends React.Component {
         firebase.auth().signOut();
       }}
         >
-      Signout
+       <Link className="nav-link" to="/">Sign Out </Link>
       </span>
     </div>
     </div>

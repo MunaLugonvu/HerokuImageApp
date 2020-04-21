@@ -11,11 +11,13 @@ const firebaseConfig = {
     appId: "1:10590883131:web:1e165f1e4c7b5476a63b1e",
     measurementId: "G-HK0D72ZWHM"
   };
+
+
   export const firebaseui={
     signInFlow:"popup",
-    signInOptions:[
+   signInOptions:[
         firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-        firebase.auth.PhoneAuthProvider.PROVIDER_ID,
+        
     ]
 }
   // Initialize Firebase

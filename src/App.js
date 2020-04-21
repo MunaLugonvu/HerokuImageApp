@@ -6,9 +6,12 @@ import Home from './components/Home';
 import Photos from './components/Photos';
 
 
+
 function App() {
+ 
 
   return (
+ 
     <div className="App">
     <BrowserRouter>
     <Navbar/>
