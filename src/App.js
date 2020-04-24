@@ -4,7 +4,8 @@ import Navbar from './components/navBar';
 import Upload from './components/upload';
 import Home from './components/Home';
 import Photos from './components/Photos';
-
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
 
 
 function App() {
