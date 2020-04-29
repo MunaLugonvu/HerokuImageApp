@@ -40,6 +40,9 @@ export default class Upload extends Component {
           this.setState({ isUploading });
           const progress = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
           this.setState({ progress });
+         
+
+          
         },
         (error) => {
         },
@@ -54,6 +57,7 @@ export default class Upload extends Component {
                   url:url,
                   added:new Date()
               }
+              
               firebase.firestore().collection(this.state.user_id).add(image).then(res=>{
                 this.props.history.push("/myphotos");
               });
@@ -61,22 +65,33 @@ export default class Upload extends Component {
             });
         });
     }
-    alert('Upload Successfull!')
+    
   }
 
     render() {
+      const previewStyle = {
+        widith: "300px",
+        height: "300px"
+      }
+      const style = {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center'
+      };
         return (
+          <div style={style}>
           
           <div className="mt-5 text-center form-group">
          {this.state.isUploading ? (<Progress percentage={this.state.progress} />) : "" }
          
           
-          
+         <h5 className="text-center">Upload your Images</h5>
          
             <form>
                 <div className="form-group multi-preview">
                     {(this.fileArray || []).map(url => (
-                        <img src={url} alt="..." />
+                        <img src={url} alt="..." style={previewStyle} />
                     ))}
                 </div>
 
@@ -89,6 +104,7 @@ export default class Upload extends Component {
 
             </div>
             
+            </div>
             
         )
     }
