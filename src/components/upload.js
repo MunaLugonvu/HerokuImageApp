@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import firebase from 'firebase';
 import Progress from './progress';
 
+
 export default class Upload extends Component {
 
     fileObj = [];
@@ -57,8 +58,9 @@ export default class Upload extends Component {
               const image={
                   url:url,
                   added:new Date()
+
               }
-              
+
               
               firebase.firestore().collection(this.state.user_id).add(image).then(res=>{
                 this.props.history.push("/myphotos");
