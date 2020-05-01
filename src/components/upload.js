@@ -17,6 +17,7 @@ export default class Upload extends Component {
         }
         this.uploadMultipleFiles = this.uploadMultipleFiles.bind(this)
         this.uploadFiles = this.uploadFiles.bind(this)
+        this.removeFile = this.removeFile.bind(this)
     }
 
     uploadMultipleFiles(e) {
@@ -64,7 +65,11 @@ export default class Upload extends Component {
   
             });
         });
-    }
+     }
+     
+    
+  }
+  removeFile(e){
     
   }
 
