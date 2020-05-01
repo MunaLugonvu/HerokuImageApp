@@ -59,6 +59,7 @@ export default class Upload extends Component {
                   added:new Date()
               }
               
+              
               firebase.firestore().collection(this.state.user_id).add(image).then(res=>{
                 this.props.history.push("/myphotos");
               });
@@ -70,6 +71,7 @@ export default class Upload extends Component {
     
   }
   removeFile(e){
+   
     
   }
 
