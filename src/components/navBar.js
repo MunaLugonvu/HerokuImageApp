@@ -19,7 +19,7 @@ export default class Navbar extends React.Component {
         <li className="nav-item">
           <Link className="nav-link" to="upload">Upload</Link>
         </li>
-        <li className="nav-item">
+        <li className="nav-item"> 
           <Link className="nav-link" to="myphotos">My Photos</Link>
         </li>
       </ul>

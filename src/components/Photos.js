@@ -1,13 +1,18 @@
 import React, { Component } from 'react'
 import firebase from "../firebase"
 export default class Photos extends Component {
-  state={
-    photos:[]
+  constructor(props){
+    super(props)
+    this.state={
+      photos:[]
+    }
   }
-  componentDidMount(){
+
+  showImage(){
     let images=[]
     firebase.firestore().collection(localStorage.getItem("user_id")).get().then(function(querySnapshot) {
       querySnapshot.forEach(function(doc) {
+         
 
           let imageData={
             url:doc.data().url,
@@ -19,20 +24,27 @@ export default class Photos extends Component {
   });
   this.setState({ photos: images });
   }
+  
+  componentDidMount(){
+ this.showImage();
+  }
   render() {
     const items=this.state.photos;
 
     return (
-      <div className="container-fluid pt-3">
-      <div className="card-columns">
-      {items.map(i=>(
-      <div className="card">
-      <img className="card-img-top materialboxed" src={i.url} alt=""/>
+    
+      <div className="container page-top">
+        <div className='row'>
+        
+      {items.map((i, index)=>(
+      <div className="col-lg-3 col-md-4 col-xs-6 thumb">
+      <img className="img-thumbnail" src={i.url} key={index} alt="Missing"/>
       </div>
       ))}
       </div>
       </div>
-
+      
+      
     )
   }
 }
