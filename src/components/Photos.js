@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import firebase from '../firebase';
+
+
 export default function Photos() {
   const [photos, setPhotos] = useState([]);
 
@@ -11,7 +13,7 @@ export default function Photos() {
       .get()
       .then(function (querySnapshot) {
         querySnapshot.forEach(function (doc) {
-          let imageData = {
+          const imageData = {
             url: doc.data().url,
             created: doc.data().added,
           };
@@ -25,12 +27,11 @@ export default function Photos() {
     showImages();
   }, []);
 
- const photo = photos;
-
+ 
   return (
     <div className="container page-top">
       <div className="row">
-        {photo.map((i, index) => (
+        {photos.map((i, index) => (
           <div className="col-lg-3 col-md-4 col-xs-6 thumb">
             <img
               className="img-thumbnail"
